@@ -1,0 +1,44 @@
+@import '../varables';
+
+.ant-layout.ant-layout-has-sider > .ant-layout, .ant-layout.ant-layout-has-sider > .ant-layout-content {
+  overflow-x: initial;
+}
+
+.ant-menu-inline .ant-menu-item {
+  margin-top: 0;
+}
+
+.ant-layout-header {
+  .ant-menu-item {
+    padding: 0 18px;
+    &:hover {
+      opacity: 1;
+      color: #fff;
+      border: none;
+    }
+    > a {
+      color: #fff;
+      font-size: 14px;
+      position: relative;
+      margin: 0 -18px;
+      padding: 0 18px;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .ant-menu-item-selected {
+    opacity: 1;
+    font-weight: 500;
+    > a:after {
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      display: block;
+      background: #fff;
+      position: absolute;
+    }
+  }
+}

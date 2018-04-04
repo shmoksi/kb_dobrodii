@@ -1,0 +1,47 @@
+@import "../../style/varables";
+
+
+.login {
+  &_wrapper {
+    height: 100vh;
+  }
+  &_block {
+    padding: 20px;
+    height: 560px;
+    width: 1000px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+    &_wrapper {
+      height: 100%;
+    }
+  }
+  &_forgot_link {
+    font-size: 14px;
+    color: @dark-blue;
+  }
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 30px;
+  }
+  &_max_width {
+    width: 100%;
+  }
+  &_form {
+    width: 70%;
+  }
+  &_languages {
+    color: @dark-blue;
+    font-size: 12px;
+    line-height: 36px;
+  }
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+}
