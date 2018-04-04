@@ -3,16 +3,6 @@
 /* FONTS */
 @font-face {
   font-weight: normal;
-  font-family: 'Roboto';
-  src: url(/fonts/Roboto-Regular.ttf);
-}
-@font-face {
-  font-weight: bold;
-  font-family: 'Roboto';
-  src: url(/fonts/Roboto-Bold.ttf);
-}
-@font-face {
-  font-weight: normal;
   font-family: 'Myriad Pro';
   src: url(/fonts/MyriadPro-Regular.otf);
 }
@@ -36,12 +26,11 @@ html, #root, #wrapper {
 }
 
 body {
-  height: 100%;
-  color: #393E41;
-  font-size: 14px;
-  font-weight: normal;
-  background-color: #F7F7F7;
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-color: #f8f9fa;
+  font: 12px Arial, Helvetica, sans-serif;
 }
 
 /*GENERAL STYLES*/
@@ -87,6 +76,24 @@ fieldset {
   background-color: transparent;
   opacity: .7;
 }
+.btn-red {
+  width: 105px;
+  display: block;
+  color: #ffffff;
+  margin: 20px auto;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 0;
+  background: #A62639;
+  border-color: #A62639;
+}
+.btn-red:hover, .btn-red:focus {
+  outline: none;
+  color: #ffffff;
+  background: #A62639;
+  opacity: 0.8;
+}
+
 .customForm {
   margin-bottom: 20px;
   .help-block {
@@ -125,48 +132,26 @@ fieldset {
   color: #393E41;
 }
 
-/* NAVBAR MENU */
-.menu {
-  width: 40%;
-  display: block;
-  margin: 0 auto 40px;
-}
-.menu .nav {
-  margin-top: 20px;
-}
-.menu .nav li a {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-.menu .nav li.active a {
-  background-color: transparent;
-  border-bottom: 2px solid #a62639;
-}
-.menu .nav>li>a:focus, .nav>li>a:hover {
-  background: none;
-}
 .nav {
-  margin-top: 30px;
+  margin: 30px 0;
 }
-.nav li a{
-  color: #333;
+.nav > li > a {
+  color: white;
+  padding: 10px;
+  border: 2px solid #F7F7F7;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  background-color: #A62639;
 }
 .nav li a:hover{
   color: #A62639;
   cursor: pointer;
 }
-.nav li.active a{
-  color: #393E41;
-  font-weight: bold;
-}
-.nav li.active a:hover{
-  cursor: default;
-}
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-  color: #393E41;
-  background-color: transparent;
+  background-color: #777777;
+}
+
+.container {
+  width: 750px;
 }
