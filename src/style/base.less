@@ -162,27 +162,33 @@ fieldset {
 .nav {
   margin: 0 0 30px;
 }
-//.nav > li {
-//
-//}
 .nav > li > a {
-  color: white;
-  height: 52px;
-  padding: 10px;
-  border: 2px solid #F7F7F7;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  background-color: #A62639;
+  padding: 0;
+  color: transparent;
+  background-color: transparent;
+}
+.nav > li > a img {
+  width: 60px;
+  height: 60px;
 }
 .nav li a:hover{
+  opacity: 0.8;
   color: #A62639;
   cursor: pointer;
+  background-color: transparent;
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-  background-color: #777777;
+  background-color: transparent;
 }
 
 .container {
   width: 750px;
+}
+.photo-window {
+  width: 100%;
+  height: auto;
+}
+.title-type {
+  text-align: center;
+  margin-bottom: 20px;
 }

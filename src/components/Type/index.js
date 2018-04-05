@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Row, Col, Nav, NavItem } from 'react-bootstrap';
-import { get, map } from 'lodash';
+import { get, map, find } from 'lodash';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -44,7 +44,7 @@ export default class Type extends PureComponent {
   render() {
     return (
       <Row>
-        <Col xs={12}>
+        <Col xs={8} xsOffset={2}>
           <Nav
             bsStyle="pills"
             justified
@@ -52,10 +52,11 @@ export default class Type extends PureComponent {
             onSelect={key => this.handleSelect(key)}>
             {TYPES.map((item, index) => (
               <NavItem key={index + 1} eventKey={item.value}>
-                {item.label}
+                <img src={item.value === this.props.type ? `images/${item.value}_active.svg` : `images/${item.value}.svg`} alt={item.value} />
               </NavItem>
             ))}
           </Nav>
+          <h3 className="title-type">{this.props.type && find(TYPES, { value: this.props.type }).label}</h3>
         </Col>
       </Row>
     );

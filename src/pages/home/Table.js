@@ -111,7 +111,9 @@ export default class Table extends PureComponent {
     return this.props.items.map(item => (
       <Row className="item" key={item.id}>
         <Col xs={5}>
-          <div className="item_photo" />
+          <div className="item_photo">
+            <img src={item.photo} className="item_photo_src" alt="person" />
+          </div>
           <div className="item_name">{item.namePerson}</div>
           <div className="item_city">{item.city}</div>
           {this.props.user ? (

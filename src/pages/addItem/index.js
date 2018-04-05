@@ -39,6 +39,7 @@ export default class AddItem extends PureComponent {
       type: 'administration',
       description: '',
       video: '',
+      photo: '',
     };
   }
 
@@ -88,24 +89,6 @@ export default class AddItem extends PureComponent {
         .push(item);
     }
     this.clearForm();
-  };
-
-  handlePhoto = async e => {
-    const file = e.target.files[0]
-    const image = document.createElement('img');
-    await new Promise(res => {
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        image.src = event.target.result;
-        res();
-      };
-      reader.readAsDataURL(file);
-    });
-    this.setState({
-      showModal: true,
-      src: image.src,
-      photo: file.name,
-    });
   };
 
   clearForm = () => {
@@ -186,21 +169,15 @@ export default class AddItem extends PureComponent {
                       />
                     </FormGroup>
 
-                    <FormGroup controlId="">
+                    <FormGroup controlId="photo">
                       <ControlLabel>Фото</ControlLabel>
                       <FormControl
-                        accept="image/*"
-                        type="file"
-                        onChange={this.handlePhoto}
+                        type="text"
+                        placeholder="Вставте ссилку на фото"
+                        onChange={this.handleChange}
+                        value={this.state.photo}
                       />
                     </FormGroup>
-
-                    <ModalCropper
-                      src={this.state.src}
-                      filename={this.state.photo}
-                      show={this.state.showModal}
-                      handleClose={() => this.setState({ showModal: false })}
-                    />
 
                     <Button type="submit" className="btn-black">
                       {this.state.id ? 'Редагувати' : 'Додати'}
