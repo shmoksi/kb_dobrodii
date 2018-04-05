@@ -5,12 +5,13 @@ const config = {
   authDomain: 'dobrodii-2bc94.firebaseapp.com',
   databaseURL: 'https://dobrodii-2bc94.firebaseio.com',
   projectId: 'dobrodii-2bc94',
-  storageBucket: '',
+  storageBucket: 'gs://dobrodii-2bc94.appspot.com',
   messagingSenderId: '907000206238',
 };
 firebase.initializeApp(config);
 
 export default firebase;
-export const provider = new firebase.auth.GoogleAuthProvider();
-// export const provider = new firebase.auth.FacebookAuthProvider();
+export const providerGM = new firebase.auth.GoogleAuthProvider();
+export const providerFB = new firebase.auth.FacebookAuthProvider();
 export const auth = firebase.auth();
+export const storageRef = firebase.storage().ref();

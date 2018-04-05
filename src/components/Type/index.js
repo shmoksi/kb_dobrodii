@@ -49,7 +49,6 @@ export default class Type extends PureComponent {
             bsStyle="pills"
             justified
             activeKey={this.props.type}
-            style={{ margin: '40px 0' }}
             onSelect={key => this.handleSelect(key)}>
             {TYPES.map((item, index) => (
               <NavItem key={index + 1} eventKey={item.value}>

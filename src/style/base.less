@@ -68,7 +68,8 @@ fieldset {
   background: #3B3E3F;
 }
 .btn-cancel {
-  background-color: transparent;
+  margin-left: 15px;
+  background: transparent;
   border-color: #3B3E3F;
   color: #3B3E3F;
 }
@@ -77,7 +78,7 @@ fieldset {
   opacity: .7;
 }
 .btn-red {
-  width: 105px;
+  width: 155px;
   display: block;
   color: #ffffff;
   margin: 20px auto;
@@ -92,6 +93,32 @@ fieldset {
   color: #ffffff;
   background: #A62639;
   opacity: 0.8;
+}
+.btn-red[disabled] {
+  border-color: inherit;
+}
+.simple-btn {
+  padding: 0;
+  color: #A62639;
+  line-height: 1;
+  margin-left: 10px;
+  vertical-align: top;
+  &:hover {
+    opacity: 0.8;
+    color: #A62639;
+  }
+  &:focus {
+    padding: 0;
+    color: #A62639;
+    line-height: 1;
+    margin-left: 10px;
+  }
+}
+.exit {
+  float: right;
+  height: 16px;
+  font-size: 14px;
+  margin: 5px 0;
 }
 
 .customForm {
@@ -133,10 +160,14 @@ fieldset {
 }
 
 .nav {
-  margin: 30px 0;
+  margin: 0 0 30px;
 }
+//.nav > li {
+//
+//}
 .nav > li > a {
   color: white;
+  height: 52px;
   padding: 10px;
   border: 2px solid #F7F7F7;
   -webkit-transition: all 0.3s;

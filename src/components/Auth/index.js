@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import firebase, { auth, provider } from 'firebase.js';
+import firebase, { auth, providerGM } from 'firebase.js';
 import { updateData } from 'actions/updateData';
 import { VOICES } from 'constants/options';
 
@@ -35,7 +35,7 @@ export default class Auth extends PureComponent {
   };
 
   login = () => {
-    auth.signInWithPopup(provider).then(result => {
+    auth.signInWithPopup(providerGM).then(result => {
       const usersRef = firebase.database().ref(`users/${result.user.uid}`);
       return usersRef.on('value', snapshot => {
         const user = snapshot.val();
@@ -58,12 +58,14 @@ export default class Auth extends PureComponent {
 
   render() {
     return this.props.user ? (
-      <span>
-        Hi, {this.props.user.displayName}!
-        <Button onClick={this.logout}>Log Out</Button>
-      </span>
+      <div className="exit">
+        Привіт, {this.props.user.displayName}!
+        <Button bsStyle="link" className="simple-btn" onClick={this.logout}>
+          Вихід
+        </Button>
+      </div>
     ) : (
-      <Button onClick={this.login}>Log In</Button>
+      <div className="exit" />
     );
   }
 }
